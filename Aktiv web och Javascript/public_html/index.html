@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grodan</title>
+    <style>
+	table, th, td {
+         border: 1px solid black;
+	}
+    </style>
+	
+    <style type="text/css">
+	<!--
+	body {
+	  background-color: #F310F3;
+	}
+	h1{
+	  color:#0000FF
+	}
+	h2{
+	  color:#E1C5CA
+	}
+     #theWordFirst{
+       color:#B5DD15
+     }
+     #theWordSecond{
+       color:#9DE33C
+     }
+	 #theWordThird{
+       color:#2B4407
+     }
+	 #theWordFourth{
+       color:#668800
+     }
+	-->
+    </style>
+
+    <script>
+	function boldText(x) {
+	   x.style.fontWeight='bold';
+	}
+	function normalText(x) {
+	   x.style.fontWeight='normal';
+	}
+    </script>
+  </head>
+  
+  <body>
+    <h1>En stor rubrik</h1>
+
+    <h2><em>En lite mindre rubrik</em></h2>
+
+    <h3 id="p1" onmouseover="mouseOver()" onmouseout="mouseOut()"></h3>
+<script>
+  document.getElementById("p1").innerHTML = Date();
+  document.getElementById("p1").style.fontSize = "larger";
+function mouseOver() {
+    document.getElementById("p1").style.color = "gold";
+    document.getElementById("p1").style.fontFamily = "Comic Sans MS";
+}
+
+function mouseOut() {
+    document.getElementById("p1").style.color = "black";
+    document.getElementById("p1").style.fontFamily = "";
+}
+</script>
+
+    <p id ="p2"></p>
+<script>
+  document.getElementById("p2").innerHTML = 
+             "Klientinformation: <strong>" 
+           + navigator.userAgent 
+           + "</strong>";
+</script>
+
+    <p id ="knapp1">Ej klickat</p>
+    <p>
+       <input id="textinput" type="text" name="text" onkeydown="myFunction()" onkeypress="myFunctionA()">
+       <br>
+       <button onclick="myButtonPressed()">Tryck här!</button>
+    </p>
+	
+<script>
+function myButtonPressed() {
+    var x = document.getElementById("textinput").value;
+    document.getElementById("knapp1").innerHTML = x;
+}
+function myFunctionA() {
+    document.getElementById("textinput").style.backgroundColor = "gold";
+}
+</script>
+
+<p id="text2"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("textinput").value;
+    document.getElementById("text2").innerHTML = x;
+}
+
+</script>
+
+<p>Detta är ett stycke med text, ungäfer som i tidningar och böcker.</p>
+<p><strong>Här</strong> kommer <u>ett</u> till <em>stycke</em> med text</p>
+
+<ul> 
+  <li> <span id="theWordFirst" onmouseenter="boldText(this)"
+                           onmouseleave="normalText(this)">Detta </span>  är 
+    första 
+    punkten i listan</li>
+  <li> Detta är 
+    <span id="theWordSecond" onmouseenter="boldText(this)"
+					 onmouseleave="normalText(this)">
+    andra </span>
+    punkten i listan </li>
+</ul>
+	  <ol> 
+		<li> Detta är första 
+    <span id="theWordThird" onmouseenter="boldText(this)"
+					onmouseleave="normalText(this)">
+	numrerade </span> 
+	punkten</li>
+		<li> Detta är andra numrerade <span id="theWordFourth" onmouseenter="boldText(this)"
+													onmouseleave="normalText(this)"> punkten </span></li>
+	</ol>
+	
+	 <p> Här har jag lagt in en bild </p>
+	 
+	 <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" 
+					src="frog.jpg" width="200" height="150">
+	 <script>
+function bigImg(x) {
+	x.style.width = "960px";
+    x.style.height = "638px";    
+}
+function normalImg(x) {
+	x.style.width = "200px";
+    x.style.height = "150px";
+    
+}
+</script>
+	 
+	 <table style="width:100%">
+	 <tr>
+		<td>Cell 1 i första raden</td>
+		<td>Cell 2 i första raden</td>
+	</tr>
+	<tr>
+		<td>Cell 1 i andra raden</td>
+		<td><a href="http://www.hig.se"><strong> Högskolan i Gävle</strong> </a></td>
+	</tr>
+	</table>
+	<h3> Min sida </h3>
+	<a href="me.html"><strong> Om mig </strong> </a>
+	
+	 </body>
+</html>	 
